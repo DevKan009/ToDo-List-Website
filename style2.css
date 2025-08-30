@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0d1117; 
+    color: #c9d1d9; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    width: 90%;
+    max-width: 500px;
+    background-color: #161b22; 
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #58a6ff; 
+}
+
+/* Input Styling */
+input[type="text"] {
+    width: 85%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #21262d; 
+    color: #c9d1d9; 
+    font-size: 1rem;
+}
+
+input[type="text"]::placeholder {
+    color: #8b949e; 
+}
+
+/* Button Styling */
+button {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#addt {
+    background-color: #238636;
+    color: #ffffff;
+}
+
+#addt:hover {
+    background-color: #2ea043;
+    transform: scale(1.05);
+}
+
+#remt {
+    background-color: #d73a49;
+    color: #ffffff;
+}
+
+#remt:hover {
+    background-color: #cb2431;
+    transform: scale(1.05);
+}
+
+/* Task Holder Styling */
+#holder {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #21262d; 
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Task Styling */
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    background-color: #30363d; 
+    color: #c9d1d9;
+    font-size: 1rem;
+    transition: transform 0.2s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.task:hover {
+    background-color: #394049;
+    transform: scale(1.02);
+}
+
+/* Highlight Incomplete Tasks */
+.task:not(.completed) {
+    background-color: #394049; 
+    border-left: 4px solid #58a6ff;
+}
+
+/* Dull Completed Tasks */
+.task.completed {
+    background-color: #21262d; 
+    color: #8b949e; 
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+/* Checkbox Styling */
+.task input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Scrollbar Styling */
+#holder::-webkit-scrollbar {
+    width: 8px;
+}
+
+#holder::-webkit-scrollbar-thumb {
+    background-color: #444c56;
+    border-radius: 5px;
+}
+
+#holder::-webkit-scrollbar-thumb:hover {
+    background-color: #586069;
+}
+
+#holder::-webkit-scrollbar-track {
+    background-color: #21262d;
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        margin: 8px 0;
+    }
+}
